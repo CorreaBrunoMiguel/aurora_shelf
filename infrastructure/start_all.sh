@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "⚡️ Inicializando módulos Orion..."
+echo "⚡️ Iniciando sincronização Aurora Shelf..."
+(uvicorn data.app:app --reload &) 
+(cd server && npm start &) 
 (cd client && npm run dev &) 
-(cd server && node index.js &) 
-(cd data && uvicorn app:app --reload &) 
-echo "🔥 Todos os módulos Aurora Shelf foram ativados!"
+echo "🌙 Pulso Orion estabilizado — todos os módulos sincronizados!"
