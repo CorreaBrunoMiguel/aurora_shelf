@@ -1,0 +1,50 @@
+# --- Orion Core Ignored Files ---
+
+# Node / JS
+node_modules/
+dist/
+build/
+.npm/
+.cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# Environment / Secrets
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs / Temp
+logs/
+*.log
+*.out
+*.tmp
+
+# OS / System
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Reports / Data Outputs
+reports/output/
+reports/__pycache__/
+data/tmp/
+data/cache/
+
+# Pasta doc/internal
+doc/internal
