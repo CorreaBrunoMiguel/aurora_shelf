@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import axios from 'axios';
 
+import bookRoutes from './routes/book.routes.js';
+
 dotenv.config();
 
 const app = express();
@@ -26,5 +28,7 @@ app.get('/data/ping', async (req, res) => {
     res.status(500).json({ error: 'Falha na comunicação com Data API' });
   }
 });
+
+app.use('/api/books', bookRoutes);
 
 app.listen(4000, () => console.log('Servidor ativo na porta 4000.'));
