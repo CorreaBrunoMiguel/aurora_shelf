@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import axios from 'axios';
 
-dotenv.config({ path: '../.env' });
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -19,10 +19,10 @@ app.get('/', (req, res) => res.send('🗣️ Orion Server ativo — Aurora Shelf
 
 app.get('/data/ping', async (req, res) => {
   try {
-    const response = await axios.get(`${process.env.DATA_API_URL}/`);
-    res.json(response.data);
+    const { data } = await axios.get(`${process.env.DATA_API_URL}/ping`);
+    res.json(data);
   } catch (error) {
-    console.error('Erro na comunicação:', error);
+    console.error('Erro na comunicação:', error?.message || error);
     res.status(500).json({ error: 'Falha na comunicação com Data API' });
   }
 });
